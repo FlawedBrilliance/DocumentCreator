@@ -1,0 +1,192 @@
+<?php
+	
+	//API Headers
+	header("Access-Control-Allow-Origin: *");
+	header("Content-Type: application/json; charset=UTF-8");
+	include_once '../../conn/dbh.inc.php' ;
+
+	//Error Display
+	error_reporting(E_ALL); ini_set('display_errors', 1);
+
+	//Main Response Array
+	$response = array() ;
+	//Define Array
+
+	$response['testplan_procedures'] = array() ;
+	$testplan_procedures = array() ;
+
+	if(isset($_GET['prs']))
+	{
+		//Get the token and PRS
+		$token = $_GET['token'] ;
+		$prs = $_GET['prs'] ;
+
+		//Query Revision Signature
+		$sql = "SELECT *
+				FROM revisions
+				WHERE rev_sign = '$token'; " ;
+		$result = mysqli_query($dcConn,$sql);
+		$resultCheck = mysqli_num_rows($result) ;
+
+
+		if($resultCheck>0)
+		{
+			//Query Section
+			$sql = "SELECT *
+					FROM sections
+					WHERE rev_sign = '$token' ; " ;
+			$result = mysqli_query($dcConn,$sql);
+			$resultCheck = mysqli_num_rows($result) ;
+			if($resultCheck>0)
+			{
+				$row = mysqli_fetch_row($result);
+				$secSign = $row[36] ;
+
+				//Query Contact Table
+				$sql = "SELECT *
+						FROM section10_testplan_procedures
+						WHERE sec_sign = '$secSign' ORDER BY row_counter DESC ; " ;
+				$result = mysqli_query($dcConn,$sql);
+				$resultCheck = mysqli_num_rows($result) ;
+
+				while ($row = mysqli_fetch_row($result))
+				{
+
+					$testplan_procedures["his_procedure_code"] = $row[2];
+
+$testplan_procedures["his_procedure"] = $row[3];
+
+$testplan_procedures["iscv_study_type"] = $row[4];
+
+$testplan_procedures["iscv_test_date"] = $row[5];
+
+$testplan_procedures["iscv_expected_value"] = $row[6];
+
+$testplan_procedures["iscv_actual_value"] = $row[7];
+
+$testplan_procedures["iscv_pass_fail"] = $row[8];
+
+$testplan_procedures["iscv_accession_num"] = $row[9];
+
+$testplan_procedures["iscv_comments"] = $row[10];
+
+$testplan_procedures["his_test_date"] = $row[11];
+
+$testplan_procedures["his_expected_value"] = $row[12];
+
+$testplan_procedures["his_actual_value"] = $row[13];
+
+$testplan_procedures["his_pass_fail"] = $row[14];
+
+$testplan_procedures["his_accession_num"] = $row[15];
+
+$testplan_procedures["his_comments"] = $row[16];
+
+$testplan_procedures["his_report_format"] = $row[17];
+
+$testplan_procedures["his_signoff"] = $row[18];
+
+
+
+					array_push($response["testplan_procedures"], $testplan_procedures) ;
+
+				}
+
+			}
+			else
+			{
+				$response = "Something went wrong (Error: Failed to fetch section data), please contact administrator.";
+			}			
+		}
+		else
+		{
+		    //Retrieve latest published revision
+		    $sql = "SELECT *
+		    		FROM revisions
+		    		WHERE prs='$prs' AND published=1
+		    		ORDER BY rev_date DESC;" ;
+			$result = mysqli_query($dcConn,$sql);
+			$resultCheck = mysqli_num_rows($result) ;
+
+
+			$row = mysqli_fetch_row($result);
+
+			$revSign = $row[0] ;
+
+			//Query Section
+			$sql = "SELECT *
+					FROM sections
+					WHERE rev_sign = '$revSign' ; " ;
+			$result = mysqli_query($dcConn,$sql);
+			$resultCheck = mysqli_num_rows($result) ;
+
+			if($resultCheck>0)
+			{
+				$row = mysqli_fetch_row($result);
+				$secSign = $row[36] ;
+
+				//Query Contact Table
+				$sql = "SELECT *
+						FROM section10_testplan_procedures
+						WHERE sec_sign = '$secSign'
+						ORDER BY row_counter DESC ; " ;
+				$result = mysqli_query($dcConn,$sql);
+				$resultCheck = mysqli_num_rows($result) ;
+
+				while ($row = mysqli_fetch_row($result))
+				{
+						$testplan_procedures["his_procedure_code"] = $row[2];
+
+$testplan_procedures["his_procedure"] = $row[3];
+
+$testplan_procedures["iscv_study_type"] = $row[4];
+
+$testplan_procedures["iscv_test_date"] = $row[5];
+
+$testplan_procedures["iscv_expected_value"] = $row[6];
+
+$testplan_procedures["iscv_actual_value"] = $row[7];
+
+$testplan_procedures["iscv_pass_fail"] = $row[8];
+
+$testplan_procedures["iscv_accession_num"] = $row[9];
+
+$testplan_procedures["iscv_comments"] = $row[10];
+
+$testplan_procedures["his_test_date"] = $row[11];
+
+$testplan_procedures["his_expected_value"] = $row[12];
+
+$testplan_procedures["his_actual_value"] = $row[13];
+
+$testplan_procedures["his_pass_fail"] = $row[14];
+
+$testplan_procedures["his_accession_num"] = $row[15];
+
+$testplan_procedures["his_comments"] = $row[16];
+
+$testplan_procedures["his_report_format"] = $row[17];
+
+$testplan_procedures["his_signoff"] = $row[18];
+
+
+					array_push($response["testplan_procedures"], $testplan_procedures) ;
+				}
+
+			}
+			else
+			{
+				$response = "Something went wrong (Error: Failed to fetch section data), please contact administrator.";
+			}
+
+		}
+	}
+	else
+	{
+		$response = "Something went wrong (Error: Failed to fetch PRS), please contact administrator.";
+	}
+
+	//Output Data in JSON
+	echo json_encode($response);
+
+?>
