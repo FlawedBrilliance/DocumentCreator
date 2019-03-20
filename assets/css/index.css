@@ -1,0 +1,142 @@
+*, *::after, *::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*::after, *::before {
+	content: '';
+}
+
+body {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	height: 100vh;
+	width: 100vw;
+	background: linear-gradient(-45deg, #001133, #001a4d, #0000ff, #000000);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+.mainWrapper {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	min-width: 700px;
+}
+
+.philipsLogo {
+	max-width: 300px;
+}
+
+.titleName {
+	font-family: 'Exo', sans-serif;
+	letter-spacing: 3px;
+	color: #fff;
+}
+
+.createNewDocument {
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	letter-spacing: 1px;
+}
+
+.createNewDocument:hover {
+	color: #fff;
+}
+
+.results {
+	min-width: 700px;
+}
+
+#formErrors {
+	width: 93%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#newDocumentHeader {
+	text-align: center;
+}
+
+#searchContainer {
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+#searchInput {
+	width: 100%;
+}
+
+#errorMessage {
+	width: 93%;
+	margin-left: auto;
+	margin-right: auto;
+	display: none;
+}
+
+#errorHeader {
+	text-align: center;
+}
+
+#errorDescription {
+	text-align: center;
+}
+
+/* Mobile Devices */
+@media only screen 
+and (max-width : 767px) {
+	.philipsLogo {
+		max-width: 200px;
+	}
+	.mainWrapper {
+		min-width: 95%;
+	}
+	.results {
+		min-width: 100%;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* Gradient Background */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}

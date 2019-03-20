@@ -1,0 +1,49 @@
+*, *::after, *::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*::after, *::before {
+	content: '';
+}
+
+body {
+	padding: 25px;
+}
+
+.logoContainer {
+	text-align: center;
+}
+
+#philipsLogo {
+	max-width: 250px;
+}
+
+.headerContainer {
+	letter-spacing: 1.5px;
+
+}
+
+#logo {
+	font-family: 'Exo', sans-serif;
+	text-transform: uppercase;
+	color: blue;
+	letter-spacing: 4px;
+}
+
+.siteHeader {
+	font-family: 'Exo', sans-serif;
+}
+
+.sectionHeader {
+	font-family: 'Exo', sans-serif;
+	text-transform: uppercase;
+	color: blue;
+	letter-spacing: 4px;
+}
+
+.sectionContainer {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
