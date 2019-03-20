@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<!-- Headers -->
+	<head>
+		<title>Document Creator - Revision History</title>
+		<link rel="icon" href="../assets/images/philipsLogo.png">
+
+		<!-- Meta Tags -->
+		<meta charset="utf-8">
+	    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+	    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" name="viewport">
+	    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+	    <!-- CDN Imports -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+
+		<!-- Internal Assets -->
+		<link rel="stylesheet" type="text/css" href="../assets/css/section.css">
+
+	</head>
+	
+
+	<!-- Body -->
+	<body>
+
+		<!-- Navigation -->
+		<nav class="ui top menu" id="navContainer">
+			<div class="sidebarTrigger item" onclick="toggleSidebar()">
+				<i class="bars icon" id="sidebarIcon"></i>
+			</div>
+			<div class="logo item">
+			    <a>Revision History</a>
+			</div>
+			<div class="item" id="siteName">Site</div>
+			<div class="right menu">
+				<div class="ui right aligned search item">
+					<div class="ui transparent icon input">
+						<input type="text" class="prompt" placeholder="Search Component">
+						<i class="search link icon"></i>
+					</div>
+					<div class="results"></div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="mainContainer">
+			<!-- Sidebar -->
+			<div class="ui vertical menu" id="sidebar">
+				<div class="ui vertical menu" id="sidebarMenu">
+					<div class="item">
+						<h4 class="ui header">Completion Insight</h4>
+						<div class="canvasWrapper">
+							<canvas id="statusChart"></canvas>
+						</div>
+					</div>
+					<div class="item">
+						<h4 class="ui header">Sections</h4>
+						<div class="menu" id="navMenu">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Main Content -->
+			<div class="contentContainer">
+				
+				<!-- Message Display -->
+				<div id="topMessage"></div>
+				<div id="resultModal"></div>
+
+				<!-- Section Header -->
+				<h2 class="ui header">
+					<i class="bookmark outline icon"></i>
+					<div class="content" id="headerContent">
+						About this Section
+					</div>
+				</h2>
+				<p class="headerDescription">Your changes will be saved globally only after you publish a new revision To publish a new revision, save changes in the sections where you made modification and navigate to the "Submit Changes" section in the navbar</p>
+
+				<div class="ui hotizontal divider"></div>
+
+				<h3>Recent Revision</h3>
+				<table class="ui celled table sortable unstackable" id="revisionTable">
+					<thead>
+						<tr>
+							<th class="two wide">Revision</th>
+							<th class="nine wide">Description</th>
+							<th class="three wide">Author</th>
+							<th class="two wide">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<!-- Rows inserted from JS -->
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+		
+		
+
+		<!-- CDN Imports -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+
+		<!-- Internal Assets -->
+		<script src="../assets/js/common.js"></script>
+		<script src="../assets/js/section.js"></script>
+		<script src="../assets/js/section1.js"></script>
+
+	</body>
+</html>

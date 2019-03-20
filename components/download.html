@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+	<!-- Headers -->
+	<head>
+		<title>Document Creator - Revision History</title>
+		<link rel="icon" href="../assets/images/philipsLogo.png">
+
+		<!-- Meta Tags -->
+		<meta charset="utf-8">
+	    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+	    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" name="viewport">
+	    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+	    <!-- CDN Imports -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+		<!-- Internal Assets -->
+		<link rel="stylesheet" type="text/css" href="../assets/css/download.css">
+
+	</head>
+	
+
+	<!-- Body -->
+	<body>
+
+		<div class="headerContainer">
+			<div class="logoContainer">
+				<img src="../assets/images/philips.jpg" id="philipsLogo">
+				<h2 id="logo">Document Creator</h2>
+			</div>
+			<h3 class="siteHeader" id="siteName"></h3>
+			<h3 class="siteHeader" id="prs"></h3>
+		</div>
+
+		<div class="ui hotizontal divider"></div>
+
+		<div class="sectionContainer">
+			<h3 class="sectionHeader">Record Revision History</h3>
+			<table class="ui celled table unstackable" id="revisionTable">
+				<thead>
+					<tr>
+						<th>Revision</th>
+						<th>Description</th>
+						<th>Author</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="ui hotizontal divider"></div>
+
+		<div class="sectionContainer">
+			<h3 class="sectionHeader">Contact Details</h3>
+			<table class="ui celled table unstackable" id="customerContactTable">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Role</th>
+						<th>Organization</th>
+						<th>Email</th>
+						<th>Phone</th>
+						<th>Remark</th>
+					</tr>
+				</thead>
+				<tbody>
+		    		<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="ui hotizontal divider"></div>
+
+		<div class="sectionContainer">
+			<h3 class="sectionHeader">Technical Details</h3>
+			<table class="ui celled table unstackable" id="technicalDetailsTable">
+				<thead>
+					<tr>
+						<th>System Type</th>
+						<th>Application Role</th>
+						<th>Application Name</th>
+						<th>Version</th>
+						<th>IP</th>
+						<th>Hostname</th>
+						<th>Username</th>
+						<th>Password</th>
+						<th>Remark</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+			
+		<div class="ui hotizontal divider"></div>
+
+		<div class="sectionContainer">
+			<h3 class="sectionHeader">Connectivity</h3>
+			<h4>Connectivity Details</h4>
+			<table class="ui celled table unstackable" id="connectivityDetailsTable">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>System</th>
+						<th>Interface Type</th>
+						<th>Message Event</th>
+						<th>Interface Direction</th>
+						<th>Source</th>
+						<th>Source IP</th>
+						<th>Destination</th>
+						<th>Destination IP</th>
+						<th>Port</th>
+						<th>AE Title</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+			<h4>Imaging Modality</h4>
+			<table class="ui celled table unstackable" id="imagingModalityDetailsTable">
+				<thead>
+					<tr>
+						<th>Vendor</th>
+						<th>Hostname</th>
+						<th>IP Address</th>
+						<th>AE Title/Port</th>
+						<th>Model</th>
+						<th>Location</th>
+						<th>Serial Number</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="ui hotizontal divider"></div>
+
+		<div class="sectionContainer">
+			<h3 class="sectionHeader">Translation Tables</h3>
+			<h4>Race</h4>
+			<table class="ui celled table unstackable" id="raceTable">
+				<thead>
+					<tr>
+						<th>Source Value</th>
+						<th>Destination Value</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+			<h4>Patient Class</h4>
+			<table class="ui celled table unstackable" id="patientClassTable">
+				<thead>
+					<tr>
+						<th>Source Value</th>
+						<th>Destination Value</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+			<h4>Order Control Code</h4>
+			<table class="ui celled table unstackable" id="orderControlCodeTable">
+				<thead>
+					<tr>
+						<th>Message Type</th>
+						<th>Processing Trigger</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+			<h4>Order Status</h4>
+			<table class="ui celled table unstackable" id="orderStatusTable">
+				<thead>
+					<tr>
+						<th>Message Type</th>
+						<th>Processing Trigger</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+			<h4>Order Control Status</h4>
+			<table class="ui celled table unstackable" id="orderControlStatusTable">
+				<thead>
+					<tr>
+						<th>Message Type</th>
+						<th>Processing Trigger</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+			<h4>Exam Modality Type</h4>
+			<table class="ui celled table unstackable" id="examModalityTypeTable">
+				<thead>
+					<tr>
+						<th>Exam Code</th>
+						<th>Study Type</th>
+						<th>Modality</th>
+						<th>AE Title</th>
+						<th>ProcStep Protocol Codes</th>
+						<th>CPT Code</th>
+						<th>ProcStep Exam Code Description</th>
+						<th>CDR Exam Code</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="ui hotizontal divider"></div>
+
+		<div class="sectionContainer">
+			<h3 class="sectionHeader">Sample Messages</h3>
+			<table class="ui celled table unstackable" id="sampleMessagesTable">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Message</th>
+						<th>Source</th>
+						<th>From</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="ui hotizontal divider"></div>
+
+		<div class="sectionContainer">
+			<h3 class="sectionHeader">Mappings</h3>
+			<h4 id="mshIbe"></h4>
+			<table class="ui celled table unstackable" id="mshTableIbe">
+				<tbody></tbody>
+			</table>
+			<br>
+			<h4 id="mshIscv"></h4>
+			<table class="ui celled table unstackable" id="mshTableIscv">
+				<tbody></tbody>
+			</table>
+			<h4 id="mshIspacs"></h4>
+			<table class="ui celled table unstackable" id="mshTableIspacs">
+				<tbody></tbody>
+			</table>
+			<h4 id="mshXper"></h4>
+			<table class="ui celled table unstackable" id="mshTableXper">
+				<tbody></tbody>
+			</table>
+
+			<h4 id="pidIbe"></h4>
+			<table class="ui celled table unstackable" id="pidTableIbe">
+				<tbody></tbody>
+			</table>
+			<br>
+			<h4 id="pidIscv"></h4>
+			<table class="ui celled table unstackable" id="pidTableIscv">
+				<tbody></tbody>
+			</table>
+			<h4 id="pidIspacs"></h4>
+			<table class="ui celled table unstackable" id="pidTableIspacs">
+				<tbody></tbody>
+			</table>
+			<h4 id="pidXper"></h4>
+			<table class="ui celled table unstackable" id="pidTableXper">
+				<tbody></tbody>
+			</table>
+
+			<h4 id="pv1Ibe"></h4>
+			<table class="ui celled table unstackable" id="pv1TableIbe">
+				<tbody></tbody>
+			</table>
+			<br>
+			<h4 id="pv1Iscv"></h4>
+			<table class="ui celled table unstackable" id="pv1TableIscv">
+				<tbody></tbody>
+			</table>
+			<h4 id="pv1Ispacs"></h4>
+			<table class="ui celled table unstackable" id="pv1TableIspacs">
+				<tbody></tbody>
+			</table>
+			<h4 id="pv1Xper"></h4>
+			<table class="ui celled table unstackable" id="pv1TableXper">
+				<tbody></tbody>
+			</table>
+
+			<h4 id="orcIbe"></h4>
+			<table class="ui celled table unstackable" id="orcTableIbe">
+				<tbody></tbody>
+			</table>
+			<br>
+			<h4 id="orcIscv"></h4>
+			<table class="ui celled table unstackable" id="orcTableIscv">
+				<tbody></tbody>
+			</table>
+			<h4 id="orcIspacs"></h4>
+			<table class="ui celled table unstackable" id="orcTableIspacs">
+				<tbody></tbody>
+			</table>
+			<h4 id="orcXper"></h4>
+			<table class="ui celled table unstackable" id="orcTableXper">
+				<tbody></tbody>
+			</table>
+
+			<h4 id="obrIbe"></h4>
+			<table class="ui celled table unstackable" id="obrTableIbe">
+				<tbody></tbody>
+			</table>
+			<br>
+			<h4 id="obrIscv"></h4>
+			<table class="ui celled table unstackable" id="obrTableIscv">
+				<tbody></tbody>
+			</table>
+			<h4 id="obrIspacs"></h4>
+			<table class="ui celled table unstackable" id="obrTableIspacs">
+				<tbody></tbody>
+			</table>
+			<h4 id="obrXper"></h4>
+			<table class="ui celled table unstackable" id="obrTableXper">
+				<tbody></tbody>
+			</table>
+
+			<h4 id="obxIbe"></h4>
+			<table class="ui celled table unstackable" id="obxTableIbe">
+				<tbody></tbody>
+			</table>
+			<br>
+			<h4 id="obxIscv"></h4>
+			<table class="ui celled table unstackable" id="obxTableIscv">
+				<tbody></tbody>
+			</table>
+			<h4 id="obxIspacs"></h4>
+			<table class="ui celled table unstackable" id="obxTableIspacs">
+				<tbody></tbody>
+			</table>
+			<h4 id="obxXper"></h4>
+			<table class="ui celled table unstackable" id="obxTableXper">
+				<tbody></tbody>
+			</table>
+
+			<h4 id="xdsIbe"></h4>
+			<table class="ui celled table unstackable" id="xdsTableIbe">
+				<tbody></tbody>
+			</table>
+			<br>
+			<h4 id="xdsIscv"></h4>
+			<table class="ui celled table unstackable" id="xdsTableIscv">
+				<tbody></tbody>
+			</table>
+			<h4 id="xdsIspacs"></h4>
+			<table class="ui celled table unstackable" id="xdsTableIspacs">
+				<tbody></tbody>
+			</table>
+			<h4 id="xdsXper"></h4>
+			<table class="ui celled table unstackable" id="xdsTableXper">
+				<tbody></tbody>
+			</table>
+		</div>
+
+		<div class="ui hotizontal divider"></div>
+
+		<div class="sectionContainer">
+			<h3 class="sectionHeader">Customizations</h3>
+			<table class="ui celled table" id="customizationsTable">
+				<thead>
+					<tr>
+						<th>Site</th>
+						<th>Description</th>
+						<th>Details</th>
+						<th>Solution</th>
+						<th>Screenshot</th>
+						<th>Remark</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="ui hotizontal divider"></div>
+
+		<div class="sectionContainer">
+			<h3 class="sectionHeader">Issue List</h3>
+			<table class="ui celled table unstackable" id="issueListTable">
+				<thead>
+					<tr>
+						<th>Issue Number</th>
+						<th>Status</th>
+						<th>Log Date</th>
+						<th>System</th>
+						<th>Issue</th>
+						<th>Status Update</th>
+						<th>Owner</th>
+						<th>Case Number</th>
+						<th>Priority</th>
+						<th>Resolve Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- Rows Inserted from JS -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- CDN Imports -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+
+		<!-- Internal Assets -->
+		<script src="../assets/js/common.js"></script>
+		<script src="../assets/js/download.js"></script>
+
+	</body>
+</html>
