@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Document Creator - Search Sites</title>
+		<link rel="icon" href="assets/images/philipsLogo.png">
+
+		<!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" name="viewport">
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<meta name="theme-color" content="#000000" />
+		
+		<!-- CDN Imports -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+		
+		<!-- Internal Assets -->
+		<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	</head>
+
+	<body>
+
+		<div class="mainWrapper">
+
+			<!-- Philips Logo -->			
+			<div class="logoContainer">
+				<img src="assets/images/philips.jpg" class="philipsLogo">
+			</div>
+
+			<!-- Title Display -->
+			<h2 class="titleName">Document Creator</h2>
+
+			<div class="ui search" id="searchContainer">
+				<div class="ui icon input" id="searchInput">
+					<input class="prompt" type="text" name="searchText" placeholder="Search Sites">
+					<i class="search icon"></i>
+				</div>
+				<div class="results"></div>
+			</div>
+
+			<!-- New Document -->
+			<a id="createNewDocument" class="createNewDocument" href="#">Can't find what you're looking for? Create a new document here!</a>
+
+		</div>
+
+		<form class="ui form tiny modal" id="newDocumentForm" name="newDocumentForm">
+			<div class="header" id="newDocumentHeader">Create New Document</div>
+			<div class="content">
+				<div class="field">
+					<label>Site Name</label>
+					<div class="field">
+						<input type="text" name="siteName" placeholder="Site Name">
+					</div>
+				</div>
+				<div class="field">
+					<label>Country</label>
+					<div class="ui search selection dropdown field">
+						<input type="hidden" name="country" id="country">
+						<i class="dropdown icon"></i>
+						<div class="default text">Select Country</div>
+						<div class="menu countryMenu"></div>
+					</div>
+				</div>
+				<div class="field">
+					<label>State/Region</label>
+					<div class="ui search selection dropdown field">
+						<input type="hidden" name="state" id="region">
+						<i class="dropdown icon"></i>
+						<div class="default text">Select State/Region</div>
+						<div class="menu regionMenu"></div>
+					</div>
+				</div>
+				<div class="field">
+					<label>City/County</label>
+					<div class="ui search selection dropdown field">
+						<input type="hidden" name="city" id="city">
+						<i class="dropdown icon"></i>
+						<div class="default text">Select City</div>
+						<div class="menu cityMenu"></div>
+					</div>
+				</div>
+				<div class="field">
+					<label>City</label>
+					<div class="field">
+						<input type="text" name="cityExt" placeholder="Enter City Name (Optional)">
+					</div>
+				</div>
+				<div class="field">
+					<label>PRS ID</label>
+					<div class="field">
+						<input type="text" name="prs" placeholder="Enter PRS">
+					</div>
+				</div>
+			</div>
+			<div class="ui error message" id="formErrors"></div>
+			<div class="ui negative message errorMessage" id="errorMessage">
+				<div class="header" id="errorHeader">Something Went Wrong</div>
+				<p id="errorDescription">Error Message</p>
+			</div>
+			<div class="actions">
+				<div class="ui red basic cancel button">
+					<i class="remove icon"></i>
+					Cancel
+				</div>
+				<button class="ui green basic button" type="submit" name="submit">
+					<i class="checkmark icon"></i>
+					Create
+				</button>
+			</div>
+		</form>
+
+
+		<!-- CDN Imports -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+
+		<!-- Internal Assets -->
+		<script src="assets/js/common.js"></script>
+		<script src="assets/js/index.js"></script>
+	</body>
+</html>
